@@ -15,7 +15,7 @@
       <tr scope="row" class="btn-list">
         <td class="box"><%= link_to chatroom.name, chatroom %></td>
         <td class="box"><%= link_to 'Edit', edit_chatroom_path(chatroom)%></td>
-        <td class="box"><%= link_to 'Destroy', chatroom, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="box"><%= link_to 'Destroy', chatroom, method: 'delete', data: { confirm: 'Are you sure?' } %></td>
         <td class="box"><%= link_to 'Join', chatroom_chatroom_users_path(chatroom), method:'post' %> </td>
         <td class="box"><%= link_to 'Leave', chatroom_chatroom_users_path(chatroom), method:'delete' %> </td>
       </tr>
