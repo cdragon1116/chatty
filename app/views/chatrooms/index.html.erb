@@ -2,23 +2,22 @@
 
 <h1>Chatrooms</h1>
 
-<table class="table">
+<table class="chatroom-list table ">
   <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
+    <tr scope="row">
+      <td class="box"><strong>聊天室的名稱</strong></th>
+      <td colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @chatrooms.each do |chatroom| %>
-      <tr>
-        <td><%= chatroom.name %></td>
-<!--         <td><%= link_to 'Show', chatroom %></td> -->
-        <td><%= link_to 'Edit', edit_chatroom_path(chatroom) %></td>
-        <td><%= link_to 'Destroy', chatroom, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to 'Join', chatroom_chatroom_users_path(chatroom), method:'post', class:'' %> </td>
-        <td><%= link_to 'Leave', chatroom_chatroom_users_path(chatroom), method:'delete', class:'' %> </td>
+      <tr scope="row" class="btn-list">
+        <td class="box"><%= link_to chatroom.name, chatroom %></td>
+        <td class="box"><%= link_to 'Edit', edit_chatroom_path(chatroom)%></td>
+        <td class="box"><%= link_to 'Destroy', chatroom, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="box"><%= link_to 'Join', chatroom_chatroom_users_path(chatroom), method:'post' %> </td>
+        <td class="box"><%= link_to 'Leave', chatroom_chatroom_users_path(chatroom), method:'delete' %> </td>
       </tr>
     <% end %>
   </tbody>
@@ -27,3 +26,5 @@
 <br>
 
 <%= link_to 'New Chatroom', new_chatroom_path %>
+
+

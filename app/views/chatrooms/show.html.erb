@@ -1,29 +1,22 @@
 <p id="notice"><%= notice %></p>
-
 <p class="room-name">
   <strong>Name:</strong>
   <%= @chatroom.name %>
 </p>
 <div class="btn-list">
-    <%= link_to 'Edit', edit_chatroom_path(@chatroom) ,class:'btn'%> |
-    <%= link_to 'Back', chatrooms_path ,class:'btn' %>
+  <%= link_to 'Edit', edit_chatroom_path(@chatroom) ,class:'btn'%> |
+  <%= link_to 'Back', chatrooms_path ,class:'btn' %>
 </div>
-
 <div id="chatroom">
-<div data-behavior='messages' data-chatroom-id='<%= @chatroom.id %>'>
+  <div data-behavior='messages' data-chatroom-id='<%= @chatroom.id %>'>
     <% @messages.each do |message|%>
       <%= render message %>
     <% end %>
+  </div>
+  <%= form_for [@chatroom, Message.new] ,remote: true, authenticity_token: true do |form| %>
+    <div class="form-group row">
+      <%= form.text_area :body, rows: 2, :class => 'input form-control col-xl-10',:placeholder => "有話快說！！！", autofocus: true %>
+    </div>
+  <% end %>
 </div>
-
-
-<%= form_for [@chatroom, Message.new] ,remote: true, authenticity_token: true do |form| %>
-<div class="form-group row">
-  <%= form.text_area :body, rows: 1, :class => 'input form-control col-xl-10',:placeholder => "有話快說！！！", autofocus: true %>
-</div>
-<% end %>
-</div>
-
-
 <%= link_to '清空所有對話' , clean_chatroom_path(@chatroom), method:'delete', data:{confirm:"你確定要全部刪光光？這很嚴重喔！"},class:'btn' %>
-

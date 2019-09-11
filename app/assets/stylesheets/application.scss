@@ -16,61 +16,72 @@
 
 @import "bootstrap";
 
-nav.navbar{
+a:hover {
+    background-color: transparent;
+}
+
+
+nav.navbar {
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
-    background-color: red;
+    background-color: #333;
     z-index: 1;
 }
 
-.fluid-container{
+.fluid-container {
     margin-top: 70px;
 }
 
-#sidebar{
-    padding: 20px 30px;
+#sidebar {
+    padding: 50px 30px;
     position: fixed;
     top: 70;
     left: 0;
     height: 100%;
     color: #eee;
     background-color: #222;
+    li{
+        line-height: 40px;
+    }
+    a{  
+        font-size: 18px;
+        padding: 20px 5px;
+    }
+    a:hover{
+        color: #eee;
+        text-decoration: none;
+    }
 }
 
-#content{
+#content {
     margin-top: 50px;
-    margin-left: 400px;
-}
-.room-name{
-    font-size: 50px;
-    margin-bottom: 20px;
-}
-#chatroom{ 
-    padding: 20px;
-    width: 100%;
-    overflow: scroll;
-    line-height: 40px;
-    font-size: 20px;
-    border-radius:5px;
+    padding: 20px 100px;
+
+    .room-name {
+        font-size: 50px;
+        margin-bottom: 20px;
+    }
 
 }
-.btn-list{
+
+.btn-list {
     margin: 20px 0 20px;
-}
-.btn-list a:hover{
-    color: #eee;
+    .box a {
+        padding: 10px 15px 10px;
+        border-radius: 5px;
+        color: #aaa;
+        font-size: 18px;
+        line-height: 40px;
+    }
 }
 
-.message{
-        padding: 5px 10px 5px;
-        border-bottom: 1px solid #aaa;
+
+.btn-list .box a:hover {
+    color: #111;
+    background-color: transparent;
+    text-decoration: none;
 }
 
 
-.input{
-    margin-left: 20px;
-    line-height: 30px;
-    font-size: 20px;
-}

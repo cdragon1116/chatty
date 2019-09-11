@@ -11,7 +11,7 @@ class ChatroomsController < ApplicationController
   # GET /chatrooms/1.json
   def show
     if user_signed_in?
-      @messages = @chatroom.messages.order(created_at: :desc).limit(100).reverse
+      @messages = @chatroom.messages.order(created_at: :desc).limit(20).reverse
     else 
       redirect_to root_path, notice: "請登入！快登入！不登入別想加入！"
     end
