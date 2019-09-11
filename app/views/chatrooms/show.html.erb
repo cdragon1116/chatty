@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @chatroom.name %>
+</p>
+
+<%= link_to 'Edit', edit_chatroom_path(@chatroom) %> |
+<%= link_to 'Back', chatrooms_path %>
+
+<div data-behavior='messages'>
+    <% @messages.each do |message|%>
+        <div><strong><%= message.user.username%> :</strong><%= message.body%></div>
+    <% end %>
+</div>
+
+    
+<%= form_for [@chatroom, Message.new] do |form| %>
+<div class="form-group row">
+  <%= form.text_area :body, rows: 1, :class => 'form-control col-xl-10', autofocus: true %>
+</div>
+<% end %>
