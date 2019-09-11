@@ -15,3 +15,62 @@
  */
 
 @import "bootstrap";
+
+nav.navbar{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: red;
+    z-index: 1;
+}
+
+.fluid-container{
+    margin-top: 70px;
+}
+
+#sidebar{
+    padding: 20px 30px;
+    position: fixed;
+    top: 70;
+    left: 0;
+    height: 100%;
+    color: #eee;
+    background-color: #222;
+}
+
+#content{
+    margin-top: 50px;
+    margin-left: 400px;
+}
+.room-name{
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+#chatroom{ 
+    padding: 20px;
+    width: 100%;
+    overflow: scroll;
+    line-height: 40px;
+    font-size: 20px;
+    border-radius:5px;
+
+}
+.btn-list{
+    margin: 20px 0 20px;
+}
+.btn-list a:hover{
+    color: #eee;
+}
+
+.message{
+        padding: 5px 10px 5px;
+        border-bottom: 1px solid #aaa;
+}
+
+
+.input{
+    margin-left: 20px;
+    line-height: 30px;
+    font-size: 20px;
+}

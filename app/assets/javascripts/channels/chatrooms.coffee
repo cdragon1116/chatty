@@ -7,3 +7,4 @@ App.chatrooms = App.cable.subscriptions.create "ChatroomsChannel",
 
   received: (data) ->
     $("[data-behavior='messages'][data-chatroom-id='#{data.chatroom_id}']").append(data.message)
+

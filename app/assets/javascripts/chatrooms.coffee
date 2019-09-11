@@ -8,3 +8,7 @@ $(document).on "turbolinks:load", ->
         if e && e.keyCode == 13
             e.preventDefault()
             $(this).submit()
+            
+
+
+

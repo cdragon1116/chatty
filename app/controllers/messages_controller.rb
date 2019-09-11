@@ -7,7 +7,10 @@ class MessagesController < ApplicationController
     message.save
     MessageRelayJob.perform_later(message)
   end
-
+  def destroy
+    @messages = Message.where(chatroom_id: @chatroom_id.id)
+    @messages.destroy_all
+  end
   private
     def set_chatroom
       @chatroom = Chatroom.find(params[:chatroom_id])

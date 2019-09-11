@@ -8,7 +8,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <nav class="navbar navbar-dark bg-dark mb-5">
+    <nav class="navbar navbar-dark bg-dark">
       <div class="container collapse navbar-collapse">
         <div class="navbar">
           <%= link_to 'Home', root_path, class:'navbar-brand'%>
@@ -26,19 +26,19 @@
     </nav>
     <div class="fluid-container">
       <div class="row">
-        <div class="col-sm-2 pl-4">
+        <div class="col-sm-2 pl-4" id="sidebar">
           <% if user_signed_in? %>
             <h5>Chatrooms</h5>
             <ul>
               <% current_user.chatrooms.each do |room|%>
                 <li>
-                  <%= link_to room.name, room, class:'' %>
+                  <%= link_to room.name, room, class:'nav-link' %>
                 </li>
                 <% end %>
               </ul>
             <% end %>
           </div>
-          <div class="col-sm-10 col-sm-offset-2">
+          <div class="col-sm-9" id="content">
             <%= yield %>
           </div>
         </div>
