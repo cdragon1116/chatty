@@ -29,7 +29,7 @@
           <ul>
             <% current_user.chatrooms.each do |room|%>
               <li>
-                <%= link_to room.name, room, class:'sideber-link' %>
+                <%= link_to room.name, room, class:'sideber-link', data: {behavior: "chatroom-link", chatroom_id: room.id} %>
               </li>
             <% end %>
           </ul>
