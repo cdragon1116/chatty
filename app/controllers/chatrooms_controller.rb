@@ -1,5 +1,5 @@
 class ChatroomsController < ApplicationController
-  before_action :set_chatroom, only: [:show, :edit, :update, :destroy]
+  before_action :set_chatroom, only: [:show, :edit, :update, :destroy, :clean]
 
   # GET /chatrooms
   # GET /chatrooms.json
@@ -16,7 +16,10 @@ class ChatroomsController < ApplicationController
       redirect_to root_path, notice: "請登入！快登入！不登入別想加入！"
     end
   end
-
+  def clean
+    @messages = @chatroom.messages.destroy_all
+    redirect_to chatroom_path(@chatroom.id)
+  end
 
   # GET /chatrooms/new
   def new

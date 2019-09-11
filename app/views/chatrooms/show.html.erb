@@ -24,3 +24,6 @@
 <% end %>
 </div>
 
+
+<%= link_to '清空所有對話' , clean_chatroom_path(@chatroom), method:'delete', data:{confirm:"你確定要全部刪光光？這很嚴重喔！"},class:'btn' %>
+
